@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\Boolean;
+namespace Runn\tests\Sanitization\Sanitizers\BooleanSanitizer;
 
-use Runn\Sanitization\Sanitizers\Boolean;
+use Runn\Sanitization\Sanitizers\BooleanSanitizer;
 
-class BooleanTest extends \PHPUnit_Framework_TestCase
+class BooleanSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testFalse()
     {
-        $sanitizer = new Boolean();
+        $sanitizer = new BooleanSanitizer();
 
         $result = $sanitizer(null);
         $this->assertFalse($result);
@@ -34,7 +34,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase
 
     public function testTrue()
     {
-        $sanitizer = new Boolean();
+        $sanitizer = new BooleanSanitizer();
 
         $result = $sanitizer(true);
         $this->assertTrue($result);

@@ -1,27 +1,27 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\IntNum;
+namespace Runn\tests\Sanitization\Sanitizers\IntSanitizer;
 
-use Runn\Sanitization\Sanitizers\IntNum;
+use Runn\Sanitization\Sanitizers\IntSanitizer;
 
-class IntNumTest extends \PHPUnit_Framework_TestCase
+class IntSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testValid()
     {
-        $sanitizer = new IntNum();
+        $sanitizer = new IntSanitizer();
         $result = $sanitizer('0');
 
         $this->assertInternalType('integer', $result);
         $this->assertEquals(0, $result);
 
-        $sanitizer = new IntNum();
+        $sanitizer = new IntSanitizer();
         $result = $sanitizer('42');
 
         $this->assertInternalType('integer', $result);
         $this->assertEquals(42, $result);
 
-        $sanitizer = new IntNum();
+        $sanitizer = new IntSanitizer();
         $result = $sanitizer('-42');
 
         $this->assertInternalType('integer', $result);
@@ -30,13 +30,13 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
 
     public function testTrim()
     {
-        $sanitizer = new IntNum();
+        $sanitizer = new IntSanitizer();
         $result = $sanitizer('  ');
 
         $this->assertInternalType('integer', $result);
         $this->assertEquals(0, $result);
 
-        $sanitizer = new IntNum();
+        $sanitizer = new IntSanitizer();
         $result = $sanitizer('42!!!');
 
         $this->assertInternalType('integer', $result);

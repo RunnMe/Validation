@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class Url extends Sanitizer
+/**
+ * String value sanitizer class - casts value to string
+ *
+ * Class StringSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class StringSanitizer extends Sanitizer
 {
 
     /**
@@ -13,7 +19,7 @@ class Url extends Sanitizer
      */
     public function sanitize($value): string
     {
-        return filter_var($value, \FILTER_SANITIZE_URL);
+        return (string)$value;
     }
 
 }

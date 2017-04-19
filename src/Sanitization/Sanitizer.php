@@ -2,6 +2,12 @@
 
 namespace Runn\Sanitization;
 
+/**
+ * Abstract sanitizer class
+ *
+ * Class Sanitizer
+ * @package Runn\Sanitization
+ */
 abstract class Sanitizer
 {
 

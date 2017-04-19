@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class Boolean extends Sanitizer
+/**
+ * Boolean sanitizer class - casts value to boolean
+ *
+ * Class BooleanSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class BooleanSanitizer extends Sanitizer
 {
 
     /**

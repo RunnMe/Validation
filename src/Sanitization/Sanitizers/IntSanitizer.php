@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class IntNum extends Sanitizer
+/**
+ * Integer number sanitizer class - casts value to integer number
+ *
+ * Class IntSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class IntSanitizer extends Sanitizer
 {
 
     /**

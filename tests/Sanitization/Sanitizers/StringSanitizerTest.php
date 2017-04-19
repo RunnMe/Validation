@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\StringValue;
+namespace Runn\tests\Sanitization\Sanitizers\StringSanitizer;
 
-use Runn\Sanitization\Sanitizers\StringValue;
+use Runn\Sanitization\Sanitizers\StringSanitizer;
 
-class StringValueTest extends \PHPUnit_Framework_TestCase
+class StringSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testValid()
     {
-        $sanitizer = new StringValue();
+        $sanitizer = new StringSanitizer();
 
         $result = $sanitizer(null);
         $this->assertInternalType('string', $result);

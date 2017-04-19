@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class FloatNum extends Sanitizer
+/**
+ * Float number sanitizer class - casts value to float number
+ *
+ * Class FloatSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class FloatSanitizer extends Sanitizer
 {
 
     /**

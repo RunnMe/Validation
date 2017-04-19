@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\Url;
+namespace Runn\tests\Sanitization\Sanitizers\UrlSanitizer;
 
-use Runn\Sanitization\Sanitizers\Url;
+use Runn\Sanitization\Sanitizers\UrlSanitizer;
 
-class UrlTest extends \PHPUnit_Framework_TestCase
+class UrlSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testValid()
     {
-        $sanitizer = new Url();
+        $sanitizer = new UrlSanitizer();
         $result = $sanitizer('http://test.com/foo/bar/?id=42');
 
         $this->assertInternalType('string', $result);
@@ -18,7 +18,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
 
     public function testTrim()
     {
-        $sanitizer = new Url();
+        $sanitizer = new UrlSanitizer();
         $result = $sanitizer('  http://test.com/foo/bar/?id=42  ');
 
         $this->assertInternalType('string', $result);

@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\Boolean;
+namespace Runn\tests\Sanitization\Sanitizers\PassThruSanitizer;
 
-use Runn\Sanitization\Sanitizers\PassThru;
+use Runn\Sanitization\Sanitizers\PassThruSanitizer;
 
-class PassThruTest extends \PHPUnit_Framework_TestCase
+class PassThruSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPassThru()
     {
-        $sanitizer = new PassThru();
+        $sanitizer = new PassThruSanitizer();
 
         $result = $sanitizer(true);
         $this->assertSame(true, $result);

@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\Date;
+namespace Runn\tests\Sanitization\Sanitizers\DateSanitizer;
 
-use Runn\Sanitization\Sanitizers\Date;
+use Runn\Sanitization\Sanitizers\DateSanitizer;
 
-class DateTest extends \PHPUnit_Framework_TestCase
+class DateSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testStrToTime()
     {
-        $sanitizer = new Date();
+        $sanitizer = new DateSanitizer();
 
         $result = $sanitizer('2000-01-01');
 
@@ -26,7 +26,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
 
     public function testDateTimeObject()
     {
-        $sanitizer = new Date();
+        $sanitizer = new DateSanitizer();
 
         $result = $sanitizer(new \DateTime('2000-01-01'));
 

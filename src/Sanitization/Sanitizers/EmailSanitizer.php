@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class Email extends Sanitizer
+/**
+ * Email sanitizer class - casts value to valid email (string)
+ * 
+ * Class EmailSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class EmailSanitizer extends Sanitizer
 {
 
     /**

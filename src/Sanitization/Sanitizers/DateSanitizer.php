@@ -5,10 +5,12 @@ namespace Runn\Sanitization\Sanitizers;
 use Runn\Sanitization\Sanitizer;
 
 /**
- * Class Date
+ * Date sanitizer class - casts value to DateTime object without time
+ *
+ * Class DateSanitizer
  * @package Runn\Sanitization\Sanitizers
  */
-class Date
+class DateSanitizer
     extends Sanitizer
 {
 

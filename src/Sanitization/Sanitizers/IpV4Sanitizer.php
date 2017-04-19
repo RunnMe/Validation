@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class IpV4 extends Sanitizer
+/**
+ * IP-address (v4) sanitizer class
+ *
+ * Class IpV4Sanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class IpV4Sanitizer extends Sanitizer
 {
 
     /**

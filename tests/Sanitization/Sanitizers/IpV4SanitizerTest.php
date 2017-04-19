@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\IpV4;
+namespace Runn\tests\Sanitization\Sanitizers\IpV4Sanitizer;
 
-use Runn\Sanitization\Sanitizers\IpV4;
+use Runn\Sanitization\Sanitizers\IpV4Sanitizer;
 
-class IpV4Test extends \PHPUnit_Framework_TestCase
+class IpV4SanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testValid()
     {
-        $sanitizer = new IpV4();
+        $sanitizer = new IpV4Sanitizer();
         $result = $sanitizer('1.2.3.4');
 
         $this->assertInternalType('string', $result);
@@ -18,13 +18,13 @@ class IpV4Test extends \PHPUnit_Framework_TestCase
 
     public function testInvalid()
     {
-        $sanitizer = new IpV4();
+        $sanitizer = new IpV4Sanitizer();
         $result = $sanitizer('1.2.3.400');
 
         $this->assertInternalType('string', $result);
         $this->assertEquals('0.0.0.0', $result);
 
-        $sanitizer = new IpV4();
+        $sanitizer = new IpV4Sanitizer();
         $result = $sanitizer('1.2.3.4.5');
 
         $this->assertInternalType('string', $result);
@@ -33,7 +33,7 @@ class IpV4Test extends \PHPUnit_Framework_TestCase
 
     public function testTrim()
     {
-        $sanitizer = new IpV4();
+        $sanitizer = new IpV4Sanitizer();
         $result = $sanitizer(' 1.2.3.4  !!!');
 
         $this->assertInternalType('string', $result);

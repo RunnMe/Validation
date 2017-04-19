@@ -5,7 +5,13 @@ namespace Runn\Sanitization\Sanitizers;
 use Runn\Core\ArrayCastingInterface;
 use Runn\Sanitization\Sanitizer;
 
-class ArrayValue extends Sanitizer
+/**
+ * Array sanitizer class - casts value to array or to ArrayCastingInterface object
+ *
+ * Class ArraySanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class ArraySanitizer extends Sanitizer
 {
 
     /**

@@ -4,7 +4,13 @@ namespace Runn\Sanitization\Sanitizers;
 
 use Runn\Sanitization\Sanitizer;
 
-class PassThru extends Sanitizer
+/**
+ * "Null" sanitizer - just passes throught any value
+ *
+ * Class PassThruSanitizer
+ * @package Runn\Sanitization\Sanitizers
+ */
+class PassThruSanitizer extends Sanitizer
 {
 
     /**

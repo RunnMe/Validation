@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\Email;
+namespace Runn\tests\Sanitization\Sanitizers\EmailSanitizer;
 
-use Runn\Sanitization\Sanitizers\Email;
+use Runn\Sanitization\Sanitizers\EmailSanitizer;
 
-class EmailTest extends \PHPUnit_Framework_TestCase
+class EmailSanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testValid()
     {
-        $sanitizer = new Email();
+        $sanitizer = new EmailSanitizer();
         $result = $sanitizer('john@valid.org');
 
         $this->assertInternalType('string', $result);
@@ -18,7 +18,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
 
     public function testTrim()
     {
-        $sanitizer = new Email();
+        $sanitizer = new EmailSanitizer();
         $result = $sanitizer('"john@valid.org"   ');
 
         $this->assertInternalType('string', $result);

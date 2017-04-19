@@ -1,16 +1,16 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\ArrayValue;
+namespace Runn\tests\Sanitization\Sanitizers\ArraySanitizer;
 
 use Runn\Core\Collection;
-use Runn\Sanitization\Sanitizers\ArrayValue;
+use Runn\Sanitization\Sanitizers\ArraySanitizer;
 
-class ArrayValueTest extends \PHPUnit_Framework_TestCase
+class ArraySanitizerTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testScalar()
     {
-        $sanitizer = new ArrayValue;
+        $sanitizer = new ArraySanitizer;
 
         $result = $sanitizer(null);
         $this->assertSame([], $result);
@@ -43,7 +43,7 @@ class ArrayValueTest extends \PHPUnit_Framework_TestCase
 
     public function testArray()
     {
-        $sanitizer = new ArrayValue;
+        $sanitizer = new ArraySanitizer;
 
         $result = $sanitizer([]);
         $this->assertSame([], $result);
@@ -54,7 +54,7 @@ class ArrayValueTest extends \PHPUnit_Framework_TestCase
 
     public function testArrayAble()
     {
-        $sanitizer = new ArrayValue;
+        $sanitizer = new ArraySanitizer;
 
         $collection = new Collection;
         $result = $sanitizer($collection);
