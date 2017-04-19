@@ -1,0 +1,26 @@
+{
+  "name": "runn/validation",
+  "description": "Runn Me! Validation and Sanitization Library",
+  "keywords": ["runn", "runn.me", "framework", "validation", "validator", "validate", "valid", "invalid", "sanitization", "sanitizer", "sanitize"],
+  "type": "library",
+  "license": "LGPL v.3",
+  "authors": [
+    {
+      "name": "Albert Stepantsev"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.0",
+    "runn/core": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Runn\\": "src/"
+    }
+  }
+}
