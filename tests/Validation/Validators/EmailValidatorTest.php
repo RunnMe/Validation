@@ -1,18 +1,18 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Email;
+namespace Runn\tests\Validation\Validators\EmailValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidEmail;
-use Runn\Validation\Validators\Email;
+use Runn\Validation\Validators\EmailValidator;
 
-class EmailTest extends \PHPUnit_Framework_TestCase
+class EmailValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new Email();
+        $validator = new EmailValidator();
         $result = $validator('test@test.com');
         $this->assertTrue($result);
     }
@@ -21,7 +21,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new Email();
+            $validator = new EmailValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
@@ -35,7 +35,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
     {
         $value = 'test';
         try {
-            $validator = new Email();
+            $validator = new EmailValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidEmail::class, $e);
@@ -49,7 +49,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
     {
         $value = 'test@test.com   ';
         try {
-            $validator = new Email();
+            $validator = new EmailValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidEmail::class, $e);

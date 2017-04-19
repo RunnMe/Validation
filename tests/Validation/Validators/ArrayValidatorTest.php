@@ -1,17 +1,17 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\ArrayValue;
+namespace Runn\tests\Validation\Validators\ArrayValidator;
 
 use Runn\Core\Collection;
 use Runn\Validation\Exceptions\InvalidArray;
-use Runn\Validation\Validators\ArrayValue;
+use Runn\Validation\Validators\ArrayValidator;
 
-class ArrayValueTest extends \PHPUnit_Framework_TestCase
+class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testNegative()
     {
-        $validator = new ArrayValue();
+        $validator = new ArrayValidator();
 
         $this->expectException(InvalidArray::class);
         $result = $validator(null);
@@ -62,7 +62,7 @@ class ArrayValueTest extends \PHPUnit_Framework_TestCase
     public function testPositive()
     {
 
-        $validator = new ArrayValue();
+        $validator = new ArrayValidator();
 
         $result = $validator([]);
         $this->assertTrue($result);

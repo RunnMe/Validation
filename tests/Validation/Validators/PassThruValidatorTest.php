@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Boolean;
+namespace Runn\tests\Validation\Validators\PassThruValidator;
 
-use Runn\Validation\Validators\PassThru;
+use Runn\Validation\Validators\PassThruValidator;
 
-class PassThruTest extends \PHPUnit_Framework_TestCase
+class PassThruValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPassThru()
     {
-        $validator = new PassThru();
+        $validator = new PassThruValidator();
 
         $result = $validator(true);
         $this->assertTrue($result);

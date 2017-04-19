@@ -6,7 +6,13 @@ use Runn\Validation\Validator;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidUrl;
 
-class Url extends Validator
+/**
+ * URL validator - checks if value is valid URL
+ *
+ * Class UrlValidator
+ * @package Runn\Validation\Validators
+ */
+class UrlValidator extends Validator
 {
 
     /**

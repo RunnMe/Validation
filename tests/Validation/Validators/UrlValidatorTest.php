@@ -1,18 +1,18 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Url;
+namespace Runn\tests\Validation\Validators\UrlValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidUrl;
-use Runn\Validation\Validators\Url;
+use Runn\Validation\Validators\UrlValidator;
 
-class UrlTest extends \PHPUnit_Framework_TestCase
+class UrlValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new Url();
+        $validator = new UrlValidator();
         $result = $validator('http://test.org');
         $this->assertTrue($result);
     }
@@ -21,7 +21,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new Url();
+            $validator = new UrlValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
@@ -35,7 +35,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     {
         $value = 'test';
         try {
-            $validator = new Url();
+            $validator = new UrlValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidUrl::class, $e);
@@ -49,7 +49,7 @@ class UrlTest extends \PHPUnit_Framework_TestCase
     {
         $value = '  http://test.org';
         try {
-            $validator = new Url();
+            $validator = new UrlValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidUrl::class, $e);

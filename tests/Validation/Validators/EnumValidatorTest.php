@@ -1,10 +1,10 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Enum;
+namespace Runn\tests\Validation\Validators\EnumValidator;
 
-use Runn\Validation\Validators\Enum;
+use Runn\Validation\Validators\EnumValidator;
 
-class EnumTest extends \PHPUnit_Framework_TestCase
+class EnumValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -12,13 +12,13 @@ class EnumTest extends \PHPUnit_Framework_TestCase
      */
     public function testEmpty()
     {
-        $validator = new Enum();
+        $validator = new EnumValidator();
         $validator->validate('foo');
     }
 
     public function testPositive()
     {
-        $validator = new Enum(['foo', 'bar']);
+        $validator = new EnumValidator(['foo', 'bar']);
         $this->assertTrue($validator->validate('foo'));
     }
 
@@ -27,7 +27,7 @@ class EnumTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegative()
     {
-        $validator = new Enum(['foo', 'bar']);
+        $validator = new EnumValidator(['foo', 'bar']);
         $this->assertTrue($validator->validate('baz'));
     }
 

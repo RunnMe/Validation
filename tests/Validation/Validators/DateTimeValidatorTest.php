@@ -1,18 +1,18 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\DateTime;
+namespace Runn\tests\Validation\Validators\DateTimeValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDateTime;
-use Runn\Validation\Validators\DateTime;
+use Runn\Validation\Validators\DateTimeValidator;
 
-class DateTimeTest extends \PHPUnit_Framework_TestCase
+class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
 
         $result = $validator('2000-01-01');
         $this->assertTrue($result);
@@ -31,7 +31,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new DateTime();
+            $validator = new DateTimeValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
@@ -45,7 +45,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         $value = 'test';
         try {
-            $validator = new DateTime();
+            $validator = new DateTimeValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDateTime::class, $e);
@@ -59,7 +59,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         $value = '2000-13-45 34:56:78';
         try {
-            $validator = new DateTime();
+            $validator = new DateTimeValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDateTime::class, $e);
@@ -75,7 +75,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     public function testFalse()
     {
         $value = false;
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
         $validator($value);
     }
 
@@ -85,7 +85,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     public function testTrue()
     {
         $value = true;
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
         $validator($value);
     }
 
@@ -95,7 +95,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     public function testArray()
     {
         $value = [1, 2, 3];
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
         $validator($value);
     }
 
@@ -105,7 +105,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     public function testObject()
     {
         $value = new class {};
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
         $validator($value);
     }
 
@@ -115,7 +115,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     public function testResource()
     {
         $value = fopen('php://input', 'r');
-        $validator = new DateTime();
+        $validator = new DateTimeValidator();
         $validator($value);
     }
 

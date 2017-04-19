@@ -1,18 +1,18 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Date;
+namespace Runn\tests\Validation\Validators\DateValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDate;
-use Runn\Validation\Validators\Date;
+use Runn\Validation\Validators\DateValidator;
 
-class DateTest extends \PHPUnit_Framework_TestCase
+class DateValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new Date();
+        $validator = new DateValidator();
 
         $result = $validator('2000-01-01');
         $this->assertTrue($result);
@@ -31,7 +31,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new Date();
+            $validator = new DateValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
@@ -45,7 +45,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         $value = 'test';
         try {
-            $validator = new Date();
+            $validator = new DateValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDate::class, $e);
@@ -59,7 +59,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         $value = '2000-13-45 34:56:78';
         try {
-            $validator = new Date();
+            $validator = new DateValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDate::class, $e);
@@ -75,7 +75,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testFalse()
     {
         $value = false;
-        $validator = new Date();
+        $validator = new DateValidator();
         $validator($value);
     }
 
@@ -85,7 +85,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testTrue()
     {
         $value = true;
-        $validator = new Date();
+        $validator = new DateValidator();
         $validator($value);
     }
 
@@ -95,7 +95,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testArray()
     {
         $value = [1, 2, 3];
-        $validator = new Date();
+        $validator = new DateValidator();
         $validator($value);
     }
 
@@ -105,7 +105,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testObject()
     {
         $value = new class {};
-        $validator = new Date();
+        $validator = new DateValidator();
         $validator($value);
     }
 
@@ -115,7 +115,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testResource()
     {
         $value = fopen('php://input', 'r');
-        $validator = new Date();
+        $validator = new DateValidator();
         $validator($value);
     }
 

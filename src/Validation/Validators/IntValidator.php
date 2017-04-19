@@ -6,7 +6,13 @@ use Runn\Validation\Validator;
 use Runn\Validation\Exceptions\InvalidInt;
 use Runn\Validation\Exceptions\OutOfRange;
 
-class IntNum
+/**
+ * Integer number validator - checks if value is valid integer number
+ *
+ * Class IntValidator
+ * @package Runn\Validation\Validators
+ */
+class IntValidator
     extends Validator
 {
 
@@ -59,4 +65,5 @@ class IntNum
         }
         return true;
     }
+
 }

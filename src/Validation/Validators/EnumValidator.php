@@ -5,7 +5,13 @@ namespace Runn\Validation\Validators;
 use Runn\Validation\Exceptions\OutOfEnum;
 use Runn\Validation\Validator;
 
-class Enum
+/**
+ * Enum validator - checks if value is in valid values list
+ *
+ * Class EnumValidator
+ * @package Runn\Validation\Validators
+ */
+class EnumValidator
     extends Validator
 {
 
@@ -14,7 +20,7 @@ class Enum
     /**
      * @param array $values
      */
-    public function __construct(array $values = [])
+    public function __construct(array/*iterable*/ $values = [])
     {
         $this->values = $values;
     }
@@ -31,4 +37,5 @@ class Enum
         }
         return true;
     }
+
 }

@@ -6,7 +6,13 @@ use Runn\Validation\Validator;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidEmail;
 
-class Email extends Validator
+/**
+ * Email validator - checks if value is valid email
+ *
+ * Class EmailValidator
+ * @package Runn\Validation\Validators
+ */
+class EmailValidator extends Validator
 {
 
     /**

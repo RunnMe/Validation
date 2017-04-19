@@ -1,17 +1,15 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\Boolean;
+namespace Runn\tests\Validation\Validators\BooleanValidator;
 
-use Runn\Validation\ValidationError;
-use Runn\Validation\Exceptions\InvalidBoolean;
-use Runn\Validation\Validators\Boolean;
+use Runn\Validation\Validators\BooleanValidator;
 
-class BooleanTest extends \PHPUnit_Framework_TestCase
+class BooleanValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new Boolean();
+        $validator = new BooleanValidator();
 
         $result = $validator(null);
         $this->assertTrue($result);
@@ -61,7 +59,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase
      */
     public function testArrayEmpty()
     {
-        $validator = new Boolean();
+        $validator = new BooleanValidator();
         $result = $validator([]);
         $this->fail();
     }
@@ -71,7 +69,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase
      */
     public function testArrayNotEmpty()
     {
-        $validator = new Boolean();
+        $validator = new BooleanValidator();
         $result = $validator([1, 2, 3]);
         $this->fail();
     }
@@ -81,7 +79,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase
      */
     public function testObject()
     {
-        $validator = new Boolean();
+        $validator = new BooleanValidator();
         $result = $validator(new class {});
         $this->fail();
     }
@@ -91,7 +89,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase
      */
     public function testResource()
     {
-        $validator = new Boolean();
+        $validator = new BooleanValidator();
         $result = $validator(fopen('php://input', 'r'));
         $this->fail();
     }

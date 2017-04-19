@@ -4,7 +4,13 @@ namespace Runn\Validation\Validators;
 
 use Runn\Validation\Validator;
 
-class PassThru extends Validator
+/**
+ * "Pass Thru" validator - always returns true
+ *
+ * Class PassThruValidator
+ * @package Runn\Validation\Validators
+ */
+class PassThruValidator extends Validator
 {
 
     /**

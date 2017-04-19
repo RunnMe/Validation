@@ -5,7 +5,13 @@ namespace Runn\Validation\Validators;
 use Runn\Validation\Exceptions\InvalidString;
 use Runn\Validation\Validator;
 
-class StringValue extends Validator
+/**
+ * String validator - checks if value is valid string
+ *
+ * Class StringValidator
+ * @package Runn\Validation\Validators
+ */
+class StringValidator extends Validator
 {
 
     /**

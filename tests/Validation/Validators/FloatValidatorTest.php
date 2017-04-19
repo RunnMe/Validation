@@ -1,33 +1,33 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\FloatNum;
+namespace Runn\tests\Validation\Validators\FloatValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidFloat;
-use Runn\Validation\Validators\FloatNum;
+use Runn\Validation\Validators\FloatValidator;
 
-class FloatNumTest extends \PHPUnit_Framework_TestCase
+class FloatValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(0);
         $this->assertTrue($result);
 
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(13);
         $this->assertTrue($result);
 
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(3.14159);
         $this->assertTrue($result);
 
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator('42');
         $this->assertTrue($result);
 
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator('42.123');
         $this->assertTrue($result);
     }
@@ -36,7 +36,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new FloatNum();
+            $validator = new FloatValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidFloat::class, $e);
@@ -50,7 +50,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
     {
         $value = '1*2';
         try {
-            $validator = new FloatNum();
+            $validator = new FloatValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidFloat::class, $e);
@@ -65,7 +65,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testNull()
     {
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(null);
     }
 
@@ -74,7 +74,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testBooleanFalse()
     {
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(false);
     }
 
@@ -83,7 +83,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testBooleanTrue()
     {
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator(true);
     }
 
@@ -92,7 +92,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidString()
     {
-        $validator = new FloatNum();
+        $validator = new FloatValidator();
         $result = $validator('foo');
     }
 

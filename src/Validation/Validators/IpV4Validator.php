@@ -6,7 +6,13 @@ use Runn\Validation\Validator;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidIpV4;
 
-class IpV4 extends Validator
+/**
+ * IP-address validator - checks if value is valid IP (v4) address
+ *
+ * Class IpV4Validator
+ * @package Runn\Validation\Validators
+ */
+class IpV4Validator extends Validator
 {
 
     /**

@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\StringValue;
+namespace Runn\tests\Validation\Validators\StringValidator;
 
-use Runn\Validation\Validators\StringValue;
+use Runn\Validation\Validators\StringValidator;
 
-class StringValueTest extends \PHPUnit_Framework_TestCase
+class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new StringValue();
+        $validator = new StringValidator();
 
         $result = $validator(null);
         $this->assertTrue($result);
@@ -49,7 +49,7 @@ class StringValueTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeArray()
     {
-        $validator = new StringValue();
+        $validator = new StringValidator();
         $result = $validator([1, 2, 3]);
     }
 
@@ -58,7 +58,7 @@ class StringValueTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeObject()
     {
-        $validator = new StringValue();
+        $validator = new StringValidator();
         $result = $validator(new class {});
     }
 
@@ -67,7 +67,7 @@ class StringValueTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeResource()
     {
-        $validator = new StringValue();
+        $validator = new StringValidator();
         $result = $validator(fopen('php://input', 'r'));
     }
 

@@ -5,7 +5,13 @@ namespace Runn\Validation\Validators;
 use Runn\Validation\Exceptions\InvalidFloat;
 use Runn\Validation\Validator;
 
-class FloatNum
+/**
+ * Float number validator - checks if value is valid float number
+ *
+ * Class FloatValidator
+ * @package Runn\Validation\Validators
+ */
+class FloatValidator
     extends Validator
 {
 

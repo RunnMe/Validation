@@ -5,7 +5,13 @@ namespace Runn\Validation\Validators;
 use Runn\Validation\Validator;
 use Runn\Validation\Exceptions\InvalidBoolean;
 
-class Boolean extends Validator
+/**
+ * Boolean validator - checks if value can be casted to boolean
+ *
+ * Class BooleanValidator
+ * @package Runn\Validation\Validators
+ */
+class BooleanValidator extends Validator
 {
 
     /**

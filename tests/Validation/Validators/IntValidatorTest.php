@@ -1,30 +1,30 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\IntNum;
+namespace Runn\tests\Validation\Validators\IntValidator;
 
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidInt;
 use Runn\Validation\Exceptions\OutOfRange;
-use Runn\Validation\Validators\IntNum;
+use Runn\Validation\Validators\IntValidator;
 
-class IntNumTest extends \PHPUnit_Framework_TestCase
+class IntValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testPositive()
     {
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator(0);
         $this->assertTrue($result);
 
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator(13);
         $this->assertTrue($result);
 
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator('42');
         $this->assertTrue($result);
 
-        $validator = new IntNum(1, 10);
+        $validator = new IntValidator(1, 10);
         $result = $validator(7);
         $this->assertTrue($result);
     }
@@ -33,7 +33,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
     {
         $value = '';
         try {
-            $validator = new IntNum();
+            $validator = new IntValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidInt::class, $e);
@@ -47,7 +47,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
     {
         $value = '1*2';
         try {
-            $validator = new IntNum();
+            $validator = new IntValidator();
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidInt::class, $e);
@@ -61,7 +61,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
     {
         $value = 13;
         try {
-            $validator = new IntNum(1, 10);
+            $validator = new IntValidator(1, 10);
             $validator($value);
         } catch (ValidationError $e) {
             $this->assertInstanceOf(OutOfRange::class, $e);
@@ -76,7 +76,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testNull()
     {
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator(null);
     }
 
@@ -85,7 +85,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testBooleanFalse()
     {
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator(false);
     }
 
@@ -94,7 +94,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testBooleanTrue()
     {
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator(true);
     }
 
@@ -103,7 +103,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidString()
     {
-        $validator = new IntNum();
+        $validator = new IntValidator();
         $result = $validator('foo');
     }
 

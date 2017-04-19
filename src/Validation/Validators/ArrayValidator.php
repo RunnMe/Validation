@@ -6,7 +6,13 @@ use Runn\Core\ArrayCastingInterface;
 use Runn\Validation\Exceptions\InvalidArray;
 use Runn\Validation\Validator;
 
-class ArrayValue extends Validator
+/**
+ * Array validator - checks if value is array or has ArrayCastingInterface
+ *
+ * Class ArrayValidator
+ * @package Runn\Validation\Validators
+ */
+class ArrayValidator extends Validator
 {
 
     /**
