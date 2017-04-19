@@ -28,10 +28,10 @@ class OutOfEnum
     }
 
     /**
-     * @param array $values
+     * @param iterable $values
      * @return $this
      */
-    public function setValues(array $values)
+    public function setValues(iterable $values)
     {
         $this->values = $values;
         return $this;

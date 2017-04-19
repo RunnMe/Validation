@@ -18,9 +18,9 @@ class EnumValidator
     protected $values = [];
 
     /**
-     * @param array $values
+     * @param iterable $values
      */
-    public function __construct(array/*iterable*/ $values = [])
+    public function __construct(iterable $values = [])
     {
         $this->values = $values;
     }
@@ -32,10 +32,12 @@ class EnumValidator
      */
     public function validate($value): bool
     {
-        if (!in_array($value, $this->values)) {
-            throw (new OutOfEnum($value))->setValues($this->values);
+        foreach ($this->values as $val) {
+            if ($val == $value) {
+                return true;
+            }
         }
-        return true;
+        throw (new OutOfEnum($value))->setValues($this->values);
     }
 
 }

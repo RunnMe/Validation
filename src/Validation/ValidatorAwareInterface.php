@@ -11,8 +11,8 @@ namespace Runn\Validation;
 interface ValidatorAwareInterface
 {
 
-    public function setValidator(/*?*/Validator $validator);
+    public function setValidator(?Validator $validator);
 
-    public function getValidator(): /*?*/Validator;
+    public function getValidator(): ?Validator;
 
 }

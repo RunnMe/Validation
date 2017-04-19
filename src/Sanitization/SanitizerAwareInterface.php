@@ -11,8 +11,8 @@ namespace Runn\Sanitization;
 interface SanitizerAwareInterface
 {
 
-    public function setSanitizer(/*?*/Sanitizer $sanitizer);
+    public function setSanitizer(?Sanitizer $sanitizer);
 
-    public function getSanitizer(): /*?*/Sanitizer;
+    public function getSanitizer(): ?Sanitizer;
 
 }

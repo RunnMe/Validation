@@ -2,6 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\EnumValidator;
 
+use Runn\Core\Collection;
 use Runn\Validation\Validators\EnumValidator;
 
 class EnumValidatorTest extends \PHPUnit_Framework_TestCase
@@ -19,6 +20,9 @@ class EnumValidatorTest extends \PHPUnit_Framework_TestCase
     public function testPositive()
     {
         $validator = new EnumValidator(['foo', 'bar']);
+        $this->assertTrue($validator->validate('foo'));
+
+        $validator = new EnumValidator(new Collection(['foo', 'bar']));
         $this->assertTrue($validator->validate('foo'));
     }
 
