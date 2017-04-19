@@ -9,11 +9,9 @@
       "name": "Albert Stepantsev"
     }
   ],
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "php": ">=7.0",
-    "runn/core": "dev-master"
+    "runn/core": "7.0.*"
   },
   "require-dev": {
     "phpunit/phpunit": "5.*"
