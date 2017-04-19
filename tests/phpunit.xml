@@ -1,0 +1,26 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.5/phpunit.xsd"
+        bootstrap="autoload.php"
+>
+
+    <testsuites>
+        <testsuite name="Sanitization">
+            <directory phpVersionOperator=">=" phpVersion="7.0">Sanitization</directory>
+        </testsuite>
+        <testsuite name="Validation">
+            <directory phpVersionOperator=">=" phpVersion="7.0">Validation</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>../src</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="clover.xml"/>
+    </logging>
+
+</phpunit>
