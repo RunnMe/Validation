@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\IntNum;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidInt;
 use Runn\Validation\Exceptions\OutOfRange;
 use Runn\Validation\Validators\IntNum;
@@ -35,7 +35,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IntNum();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidInt::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -49,7 +49,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IntNum();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidInt::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -63,7 +63,7 @@ class IntNumTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IntNum(1, 10);
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(OutOfRange::class, $e);
             $this->assertEquals($value, $e->value);
             return;

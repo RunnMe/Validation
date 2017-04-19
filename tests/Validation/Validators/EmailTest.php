@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\Email;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidEmail;
 use Runn\Validation\Validators\Email;
@@ -23,7 +23,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Email();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -37,7 +37,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Email();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidEmail::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -51,7 +51,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Email();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidEmail::class, $e);
             $this->assertEquals($value, $e->value);
             return;

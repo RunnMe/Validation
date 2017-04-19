@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\DateTime;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDateTime;
 use Runn\Validation\Validators\DateTime;
@@ -33,7 +33,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new DateTime();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -47,7 +47,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new DateTime();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDateTime::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -61,7 +61,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new DateTime();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDateTime::class, $e);
             $this->assertEquals($value, $e->value);
             return;

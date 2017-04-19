@@ -1,15 +1,15 @@
 <?php
 
-namespace Runn\tests\Validation\Error;
+namespace Runn\tests\Validation\ValidationError;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
-class ErrorTest extends \PHPUnit_Framework_TestCase
+class ValidationErrorTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testConstruct()
     {
-        $error = new Error(42, 'Invalid value', 100);
+        $error = new ValidationError(42, 'Invalid value', 100);
 
         $this->assertInstanceOf(\Throwable::class, $error);
         $this->assertEquals(42, $error->value);

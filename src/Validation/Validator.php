@@ -2,6 +2,12 @@
 
 namespace Runn\Validation;
 
+/**
+ * Abstract validator class
+ *
+ * Class Validator
+ * @package Runn\Validation
+ */
 abstract class Validator
 {
 

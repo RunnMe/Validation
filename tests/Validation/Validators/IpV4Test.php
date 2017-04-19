@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\IpV4;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidIpV4;
 use Runn\Validation\Validators\IpV4;
@@ -23,7 +23,7 @@ class IpV4Test extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IpV4();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -37,7 +37,7 @@ class IpV4Test extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IpV4();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidIpV4::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -51,7 +51,7 @@ class IpV4Test extends \PHPUnit_Framework_TestCase
         try {
             $validator = new IpV4();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidIpV4::class, $e);
             $this->assertEquals($value, $e->value);
             return;

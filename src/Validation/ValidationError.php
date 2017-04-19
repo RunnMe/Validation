@@ -4,14 +4,13 @@ namespace Runn\Validation;
 
 use Runn\Core\Exception;
 
-
 /**
- * Class Error
+ * Class ValidationError
  * @package Runn\Validation
  *
  * @property mixed $value
  */
-class Error
+class ValidationError
     extends Exception
 {
 

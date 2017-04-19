@@ -2,10 +2,14 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Invalid boolean" validation error
+ *
+ * Class InvalidBoolean
+ * @package Runn\Validation\Exceptions
+ */
 class InvalidBoolean
-    extends Error
-{
-
-}
+    extends ValidationError
+{}

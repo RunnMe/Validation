@@ -2,10 +2,16 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Value is out of enumeration" validation error
+ *
+ * Class OutOfEnum
+ * @package Runn\Validation\Exceptions
+ */
 class OutOfEnum
-    extends Error
+    extends ValidationError
 {
 
     /**

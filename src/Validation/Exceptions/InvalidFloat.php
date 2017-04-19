@@ -2,10 +2,14 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Invalid float number" validation error
+ *
+ * Class InvalidFloat
+ * @package Runn\Validation\Exceptions
+ */
 class InvalidFloat
-    extends Error
-{
-
-}
+    extends ValidationError
+{}

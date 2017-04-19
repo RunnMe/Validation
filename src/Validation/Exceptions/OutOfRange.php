@@ -2,10 +2,14 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Value is out fo range" validation error
+ *
+ * Class OutOfRange
+ * @package Runn\Validation\Exceptions
+ */
 class OutOfRange
-    extends Error
-{
-
-}
+    extends ValidationError
+{}

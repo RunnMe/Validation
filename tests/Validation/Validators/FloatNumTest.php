@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\FloatNum;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidFloat;
 use Runn\Validation\Validators\FloatNum;
 
@@ -38,7 +38,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new FloatNum();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidFloat::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -52,7 +52,7 @@ class FloatNumTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new FloatNum();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidFloat::class, $e);
             $this->assertEquals($value, $e->value);
             return;

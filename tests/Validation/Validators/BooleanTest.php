@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\Boolean;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidBoolean;
 use Runn\Validation\Validators\Boolean;
 

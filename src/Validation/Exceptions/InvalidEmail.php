@@ -2,10 +2,14 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Invalid email" validation error
+ *
+ * Class InvalidEmail
+ * @package Runn\Validation\Exceptions
+ */
 class InvalidEmail
-    extends Error
-{
-
-}
+    extends ValidationError
+{}

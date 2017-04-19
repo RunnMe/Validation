@@ -2,7 +2,7 @@
 
 namespace Runn\tests\Validation\Validators\Date;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDate;
 use Runn\Validation\Validators\Date;
@@ -33,7 +33,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Date();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(EmptyValue::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -47,7 +47,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Date();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDate::class, $e);
             $this->assertEquals($value, $e->value);
             return;
@@ -61,7 +61,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
         try {
             $validator = new Date();
             $validator($value);
-        } catch (Error $e) {
+        } catch (ValidationError $e) {
             $this->assertInstanceOf(InvalidDate::class, $e);
             $this->assertEquals($value, $e->value);
             return;

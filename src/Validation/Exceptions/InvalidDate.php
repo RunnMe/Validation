@@ -2,10 +2,14 @@
 
 namespace Runn\Validation\Exceptions;
 
-use Runn\Validation\Error;
+use Runn\Validation\ValidationError;
 
+/**
+ * "Invalid date" validation error
+ *
+ * Class InvalidDate
+ * @package Runn\Validation\Exceptions
+ */
 class InvalidDate
-    extends Error
-{
-
-}
+    extends ValidationError
+{}
