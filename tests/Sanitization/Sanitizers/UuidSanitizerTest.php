@@ -1,6 +1,6 @@
 <?php
 
-namespace Runn\tests\Sanitization\Sanitizers\IntSanitizer;
+namespace Runn\tests\Sanitization\Sanitizers\UuidSanitizer;
 
 use Runn\Sanitization\Sanitizers\UuidSanitizer;
 

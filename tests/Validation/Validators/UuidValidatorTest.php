@@ -1,6 +1,6 @@
 <?php
 
-namespace Runn\tests\Validation\Validators\IntValidator;
+namespace Runn\tests\Validation\Validators\UuidValidator;
 
 use Runn\Validation\Validators\UuidValidator;
 
