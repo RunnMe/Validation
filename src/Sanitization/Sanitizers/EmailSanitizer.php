@@ -19,7 +19,7 @@ class EmailSanitizer extends Sanitizer
      */
     public function sanitize($value): string
     {
-        return filter_var((string)$value, \FILTER_SANITIZE_EMAIL);
+        return filter_var($value, \FILTER_SANITIZE_EMAIL);
     }
 
 }

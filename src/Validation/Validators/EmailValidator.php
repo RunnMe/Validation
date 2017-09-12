@@ -27,7 +27,7 @@ class EmailValidator extends Validator
             throw new EmptyValue($value);
         }
 
-        if ( false === filter_var((string)$value, \FILTER_VALIDATE_EMAIL) ) {
+        if ( false === filter_var($value, \FILTER_VALIDATE_EMAIL) ) {
             throw new InvalidEmail($value);
         }
 
