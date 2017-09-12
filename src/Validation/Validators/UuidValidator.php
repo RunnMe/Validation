@@ -3,7 +3,6 @@
 namespace Runn\Validation\Validators;
 
 use Runn\Validation\Exceptions\EmptyValue;
-use Runn\Validation\Exceptions\InvalidString;
 use Runn\Validation\Exceptions\InvalidUuid;
 use Runn\Validation\Validator;
 
@@ -20,7 +19,6 @@ class UuidValidator extends Validator
      * @param mixed $value
      * @return bool
      * @throws \Runn\Validation\Exceptions\EmptyValue
-     * @throws \Runn\Validation\Exceptions\InvalidString
      * @throws \Runn\Validation\Exceptions\InvalidUuid
      */
     public function validate($value): bool
@@ -30,7 +28,7 @@ class UuidValidator extends Validator
         }
 
         if (!is_string($value)) {
-            throw new InvalidString($value);
+            throw new InvalidUuid($value);
         }
 
         $value = preg_replace('~[^0-9A-F]~i', '', $value);

@@ -17,9 +17,9 @@ class UuidValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
+     * @expectedException \Runn\Validation\Exceptions\InvalidUuid
      */
-    public function testUuidInvalidString()
+    public function testNotString()
     {
         $validator = new UuidValidator();
         $validator(42);
