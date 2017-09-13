@@ -20,6 +20,7 @@ class UuidSanitizer extends Sanitizer
     public function sanitize($value): string
     {
         $value = preg_replace('~[^0-9A-F]~i', '', $value);
+
         $data[] = substr($value, 0, 8);
         $data[] = substr($value, 8, 4);
         $data[] = substr($value, 12, 4);
