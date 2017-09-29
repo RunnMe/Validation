@@ -5,7 +5,7 @@ namespace Runn\Sanitization\Sanitizers;
 use Runn\Sanitization\Sanitizer;
 
 /**
- * UUID sanitizer class - cast value to valid UUID
+ * UUID sanitizer class - casts value to valid UUID
  *
  * Class UuidSanitizer
  * @package Runn\Sanitization\Sanitizers
@@ -31,4 +31,5 @@ class UuidSanitizer extends Sanitizer
 
         return $value;
     }
+
 }
