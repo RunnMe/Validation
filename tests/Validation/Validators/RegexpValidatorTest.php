@@ -8,7 +8,7 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @7.1
-     * @ expectedException \ArgumentCountError
+     * expectedException \ArgumentCountError
      */
     /*
     public function testParentValidator()
