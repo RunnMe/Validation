@@ -31,8 +31,8 @@ class UuidValidator extends Validator
             throw new InvalidUuid($value);
         }
 
-        $value = preg_replace('~[^0-9A-F]~i', '', $value);
-        if (32 !== strlen($value)) {
+        $sanitizedValue = preg_replace('~[^0-9A-F]~i', '', $value);
+        if (32 !== strlen($sanitizedValue)) {
             throw new InvalidUuid($value);
         }
 
