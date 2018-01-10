@@ -18,7 +18,8 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
     public function testPositive()
     {
         $validator = new class extends RegexpValidator {
-            protected const TEMPLATE = '~abc~';
+            // @7.1
+            /*protected */const TEMPLATE = '~abc~';
         };
 
         $result = $validator('abc');
@@ -41,7 +42,8 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
     public function testNegativeEmpty()
     {
         $validator = new class extends RegexpValidator {
-            protected const TEMPLATE = '~abc~';
+            // @7.1
+            /*protected */const TEMPLATE = '~abc~';
         };
 
         $result = $validator('');
@@ -53,7 +55,8 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
     public function testNegativeNotMatch()
     {
         $validator = new class extends RegexpValidator {
-            protected const TEMPLATE = '~abc~';
+            // @7.1
+            /*protected */const TEMPLATE = '~abc~';
         };
 
         $result = $validator('foo');
@@ -65,7 +68,8 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
     public function testNegativeNotMatchObject()
     {
         $validator = new class extends RegexpValidator {
-            protected const TEMPLATE = '~abc~';
+            // @7.1
+            /*protected */const TEMPLATE = '~abc~';
         };
 
         $result = $validator(new class {public function __toString()

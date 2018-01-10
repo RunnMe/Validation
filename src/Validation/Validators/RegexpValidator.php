@@ -14,7 +14,8 @@ use Runn\Validation\Validator;
 abstract class RegexpValidator extends StringValidator
 {
 
-    protected const TEMPLATE = '~.*~';
+    // @7.1
+    /*protected */const TEMPLATE = '~.*~';
 
     /**
      * @return string
