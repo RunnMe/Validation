@@ -7,20 +7,18 @@ use Runn\Validation\Validators\RegexpValidator;
 class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
+     * @7.1
+     * @expectedException \ArgumentCountError
      */
     public function testParentValidator()
     {
-        $validator = new class extends RegexpValidator {};
+        $validator = new RegexpValidator;
         $validator([1,2,3]);
     }
 
     public function testPositive()
     {
-        $validator = new class extends RegexpValidator {
-            // @7.1
-            protected const TEMPLATE = '~abc~';
-        };
+        $validator = new RegexpValidator('~abc~');
 
         $result = $validator('abc');
         $this->assertTrue($result);
@@ -41,11 +39,7 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeEmpty()
     {
-        $validator = new class extends RegexpValidator {
-            // @7.1
-            protected const TEMPLATE = '~abc~';
-        };
-
+        $validator = new RegexpValidator('~abc~');
         $result = $validator('');
     }
 
@@ -54,11 +48,7 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeNotMatch()
     {
-        $validator = new class extends RegexpValidator {
-            // @7.1
-            protected const TEMPLATE = '~abc~';
-        };
-
+        $validator = new RegexpValidator('~abc~');
         $result = $validator('foo');
     }
 
@@ -67,11 +57,7 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testNegativeNotMatchObject()
     {
-        $validator = new class extends RegexpValidator {
-            // @7.1
-            protected const TEMPLATE = '~abc~';
-        };
-
+        $validator = new RegexpValidator('~abc~');
         $result = $validator(new class {public function __toString()
         {
             return 'foo';
