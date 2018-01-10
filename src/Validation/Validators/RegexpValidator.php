@@ -3,7 +3,6 @@
 namespace Runn\Validation\Validators;
 
 use Runn\Validation\Exceptions\InvalidString;
-use Runn\Validation\Validator;
 
 /**
  * String regexp validator - checks if value matches against PCRE template
@@ -11,18 +10,18 @@ use Runn\Validation\Validator;
  * Class RegexpValidator
  * @package Runn\Validation\Validators
  */
-abstract class RegexpValidator extends StringValidator
+class RegexpValidator extends StringValidator
 {
 
-    // @7.1
-    /*protected */const TEMPLATE = '~.*~';
+    protected $template;
 
     /**
-     * @return string
+     * RegexpValidator constructor.
+     * @param string $template
      */
-    protected function getTemplate()
+    public function __construct(string $template)
     {
-        return static::TEMPLATE;
+        $this->template = $template;
     }
 
     /**
@@ -37,7 +36,7 @@ abstract class RegexpValidator extends StringValidator
             throw new InvalidString($value);
             // @codeCoverageIgnoreEnd
         }
-        if (!preg_match($this->getTemplate(), (string)$value)) {
+        if (!preg_match($this->template, (string)$value)) {
             throw new InvalidString($value);
         };
         return true;
