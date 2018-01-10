@@ -15,7 +15,7 @@ abstract class RegexpValidator extends StringValidator
 {
 
     // @7.1
-    /*protected */const TEMPLATE = '~.*~';
+    protected const TEMPLATE = '~.*~';
 
     /**
      * @return string
