@@ -12,4 +12,5 @@ use Runn\Validation\ValidationError;
  */
 class OutOfRange
     extends ValidationError
-{}
+{
+}
