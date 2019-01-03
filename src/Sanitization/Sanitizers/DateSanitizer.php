@@ -2,6 +2,7 @@
 
 namespace Runn\Sanitization\Sanitizers;
 
+use Runn\Core\DateTime;
 use Runn\Sanitization\Sanitizer;
 
 /**
@@ -23,7 +24,7 @@ class DateSanitizer
         if ($value instanceof \DateTimeInterface) {
             $value = $value->format('Y-m-d');
         }
-        return (new \DateTime($value))->setTime(0, 0, 0);
+        return (new DateTime($value))->setTime(0, 0, 0);
     }
 
 }

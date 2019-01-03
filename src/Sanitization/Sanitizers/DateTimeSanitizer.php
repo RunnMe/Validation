@@ -2,6 +2,7 @@
 
 namespace Runn\Sanitization\Sanitizers;
 
+use Runn\Core\DateTime;
 use Runn\Sanitization\Sanitizer;
 
 /**
@@ -21,9 +22,9 @@ class DateTimeSanitizer
     public function sanitize($value): \DateTimeInterface
     {
         if ($value instanceof \DateTimeInterface) {
-            return $value;
+            $value = $value->format('c');
         }
-        return new \DateTime($value);
+        return new DateTime($value);
     }
 
 }
