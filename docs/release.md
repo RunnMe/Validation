@@ -1,3 +1,9 @@
+7.2.4, 7.3.4, 7.4.4
+===================
+* PHP 7.0 support is dropped
+* PHP 7.1 support is dropped
+* PHP 7.4 support is added
+
 7.0.3, 7.1.3, 7.2.3
 ===================
 * License identifier update

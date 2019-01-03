@@ -7,7 +7,6 @@ use Runn\Validation\Validators\RegexpValidator;
 class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @7.1
      * @expectedException \ArgumentCountError
      */
     public function testParentValidator()
