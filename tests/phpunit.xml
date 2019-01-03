@@ -6,10 +6,10 @@
 
     <testsuites>
         <testsuite name="Sanitization">
-            <directory phpVersionOperator=">=" phpVersion="7.0">Sanitization</directory>
+            <directory phpVersionOperator=">=" phpVersion="7.2">Sanitization</directory>
         </testsuite>
         <testsuite name="Validation">
-            <directory phpVersionOperator=">=" phpVersion="7.0">Validation</directory>
+            <directory phpVersionOperator=">=" phpVersion="7.2">Validation</directory>
         </testsuite>
     </testsuites>
 
