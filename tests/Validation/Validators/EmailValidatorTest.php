@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\EmailValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidEmail;
 use Runn\Validation\Validators\EmailValidator;
 
-class EmailValidatorTest extends \PHPUnit_Framework_TestCase
+class EmailValidatorTest extends TestCase
 {
 
     public function testPositive()

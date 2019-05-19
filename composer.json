@@ -18,7 +18,7 @@
     "runn/core": "dev-master"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.*"
+    "phpunit/phpunit": "8.*"
   },
   "autoload": {
     "psr-4": {

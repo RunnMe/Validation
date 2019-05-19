@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Validation\Exceptions\OutOfEnum;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\Exceptions\OutOfEnum;
 
-class OutOfEnumTest extends \PHPUnit_Framework_TestCase
+class OutOfEnumTest extends TestCase
 {
 
     public function testGetSetValues()

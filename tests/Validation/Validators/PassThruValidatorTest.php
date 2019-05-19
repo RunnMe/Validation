@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Validation\Validators\PassThruValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\Validators\PassThruValidator;
 
-class PassThruValidatorTest extends \PHPUnit_Framework_TestCase
+class PassThruValidatorTest extends TestCase
 {
 
     public function testPassThru()

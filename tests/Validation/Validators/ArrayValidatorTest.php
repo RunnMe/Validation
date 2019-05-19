@@ -2,11 +2,12 @@
 
 namespace Runn\tests\Validation\Validators\ArrayValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Core\Collection;
 use Runn\Validation\Exceptions\InvalidArray;
 use Runn\Validation\Validators\ArrayValidator;
 
-class ArrayValidatorTest extends \PHPUnit_Framework_TestCase
+class ArrayValidatorTest extends TestCase
 {
 
     public function testNegative()

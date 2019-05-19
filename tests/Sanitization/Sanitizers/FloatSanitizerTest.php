@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\FloatSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\FloatSanitizer;
 
-class FloatSanitizerTest extends \PHPUnit_Framework_TestCase
+class FloatSanitizerTest extends TestCase
 {
 
     public function testValid()
@@ -13,31 +14,31 @@ class FloatSanitizerTest extends \PHPUnit_Framework_TestCase
         $result = $sanitizer('0');
 
         // @todo: WTF???
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(0, $result);
 
         $sanitizer = new FloatSanitizer();
         $result = $sanitizer('42');
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(42, $result);
 
         $sanitizer = new FloatSanitizer();
         $result = $sanitizer('-42');
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(-42, $result);
 
         $sanitizer = new FloatSanitizer();
         $result = $sanitizer('3.14159');
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(3.14159, $result);
 
         $sanitizer = new FloatSanitizer();
         $result = $sanitizer(3.14159);
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(3.14159, $result);
     }
 
@@ -47,13 +48,13 @@ class FloatSanitizerTest extends \PHPUnit_Framework_TestCase
         $result = $sanitizer('  ');
 
         // @todo: WTF???
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(0, $result);
 
         $sanitizer = new FloatSanitizer();
         $result = $sanitizer('42.123!!!');
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertEquals(42.123, $result);
     }
 

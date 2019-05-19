@@ -2,9 +2,11 @@
 
 namespace Runn\tests\Validation\Validators\BooleanValidator;
 
+use PHPUnit\Framework\TestCase;
+use Runn\Validation\Exceptions\InvalidBoolean;
 use Runn\Validation\Validators\BooleanValidator;
 
-class BooleanValidatorTest extends \PHPUnit_Framework_TestCase
+class BooleanValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -54,44 +56,36 @@ class BooleanValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidBoolean
-     */
     public function testArrayEmpty()
     {
         $validator = new BooleanValidator();
+
+        $this->expectException(InvalidBoolean::class);
         $result = $validator([]);
-        $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidBoolean
-     */
     public function testArrayNotEmpty()
     {
         $validator = new BooleanValidator();
+
+        $this->expectException(InvalidBoolean::class);
         $result = $validator([1, 2, 3]);
-        $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidBoolean
-     */
     public function testObject()
     {
         $validator = new BooleanValidator();
+
+        $this->expectException(InvalidBoolean::class);
         $result = $validator(new class {});
-        $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidBoolean
-     */
     public function testResource()
     {
         $validator = new BooleanValidator();
+
+        $this->expectException(InvalidBoolean::class);
         $result = $validator(fopen('php://input', 'r'));
-        $this->fail();
     }
 
 }

@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Validation\ValidationError;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 
-class ValidationErrorTest extends \PHPUnit_Framework_TestCase
+class ValidationErrorTest extends TestCase
 {
 
     public function testConstruct()

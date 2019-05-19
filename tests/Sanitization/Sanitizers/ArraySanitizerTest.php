@@ -2,10 +2,11 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\ArraySanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Core\Collection;
 use Runn\Sanitization\Sanitizers\ArraySanitizer;
 
-class ArraySanitizerTest extends \PHPUnit_Framework_TestCase
+class ArraySanitizerTest extends TestCase
 {
 
     public function testScalar()

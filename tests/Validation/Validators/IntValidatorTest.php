@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\IntValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidInt;
 use Runn\Validation\Exceptions\OutOfRange;
 use Runn\Validation\Validators\IntValidator;
 
-class IntValidatorTest extends \PHPUnit_Framework_TestCase
+class IntValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -71,40 +72,36 @@ class IntValidatorTest extends \PHPUnit_Framework_TestCase
         $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidInt
-     */
     public function testNull()
     {
         $validator = new IntValidator();
-        $result = $validator(null);
+
+        $this->expectException(InvalidInt::class);
+        $validator(null);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidInt
-     */
     public function testBooleanFalse()
     {
         $validator = new IntValidator();
-        $result = $validator(false);
+
+        $this->expectException(InvalidInt::class);
+        $validator(false);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidInt
-     */
     public function testBooleanTrue()
     {
         $validator = new IntValidator();
-        $result = $validator(true);
+
+        $this->expectException(InvalidInt::class);
+        $validator(true);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidInt
-     */
     public function testInvalidString()
     {
         $validator = new IntValidator();
-        $result = $validator('foo');
+
+        $this->expectException(InvalidInt::class);
+        $validator('foo');
     }
 
 }

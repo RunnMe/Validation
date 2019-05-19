@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\DateValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDate;
 use Runn\Validation\Validators\DateValidator;
 
-class DateValidatorTest extends \PHPUnit_Framework_TestCase
+class DateValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -69,53 +70,48 @@ class DateValidatorTest extends \PHPUnit_Framework_TestCase
         $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDate
-     */
     public function testFalse()
     {
         $value = false;
         $validator = new DateValidator();
+
+        $this->expectException(InvalidDate::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDate
-     */
     public function testTrue()
     {
         $value = true;
         $validator = new DateValidator();
+
+        $this->expectException(InvalidDate::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDate
-     */
     public function testArray()
     {
         $value = [1, 2, 3];
         $validator = new DateValidator();
+
+        $this->expectException(InvalidDate::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDate
-     */
     public function testObject()
     {
         $value = new class {};
         $validator = new DateValidator();
+
+        $this->expectException(InvalidDate::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDate
-     */
     public function testResource()
     {
         $value = fopen('php://input', 'r');
         $validator = new DateValidator();
+
+        $this->expectException(InvalidDate::class);
         $validator($value);
     }
 

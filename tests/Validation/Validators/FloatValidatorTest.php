@@ -2,11 +2,12 @@
 
 namespace Runn\tests\Validation\Validators\FloatValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\InvalidFloat;
 use Runn\Validation\Validators\FloatValidator;
 
-class FloatValidatorTest extends \PHPUnit_Framework_TestCase
+class FloatValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -60,40 +61,36 @@ class FloatValidatorTest extends \PHPUnit_Framework_TestCase
         $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidFloat
-     */
     public function testNull()
     {
         $validator = new FloatValidator();
-        $result = $validator(null);
+
+        $this->expectException(InvalidFloat::class);
+        $validator(null);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidFloat
-     */
     public function testBooleanFalse()
     {
         $validator = new FloatValidator();
-        $result = $validator(false);
+
+        $this->expectException(InvalidFloat::class);
+        $validator(false);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidFloat
-     */
     public function testBooleanTrue()
     {
         $validator = new FloatValidator();
-        $result = $validator(true);
+
+        $this->expectException(InvalidFloat::class);
+        $validator(true);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidFloat
-     */
     public function testInvalidString()
     {
         $validator = new FloatValidator();
-        $result = $validator('foo');
+
+        $this->expectException(InvalidFloat::class);
+        $validator('foo');
     }
 
 }

@@ -2,9 +2,11 @@
 
 namespace Runn\tests\Validation\Validators\StringValidator;
 
+use PHPUnit\Framework\TestCase;
+use Runn\Validation\Exceptions\InvalidString;
 use Runn\Validation\Validators\StringValidator;
 
-class StringValidatorTest extends \PHPUnit_Framework_TestCase
+class StringValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -44,31 +46,28 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeArray()
     {
         $validator = new StringValidator();
-        $result = $validator([1, 2, 3]);
+
+        $this->expectException(InvalidString::class);
+        $validator([1, 2, 3]);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeObject()
     {
         $validator = new StringValidator();
-        $result = $validator(new class {});
+
+        $this->expectException(InvalidString::class);
+        $validator(new class {});
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeResource()
     {
         $validator = new StringValidator();
-        $result = $validator(fopen('php://input', 'r'));
+
+        $this->expectException(InvalidString::class);
+        $validator(fopen('php://input', 'r'));
     }
 
 }

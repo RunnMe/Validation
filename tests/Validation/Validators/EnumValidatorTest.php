@@ -2,18 +2,19 @@
 
 namespace Runn\tests\Validation\Validators\EnumValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Core\Collection;
+use Runn\Validation\Exceptions\OutOfEnum;
 use Runn\Validation\Validators\EnumValidator;
 
-class EnumValidatorTest extends \PHPUnit_Framework_TestCase
+class EnumValidatorTest extends TestCase
 {
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\OutOfEnum
-     */
     public function testEmpty()
     {
         $validator = new EnumValidator();
+
+        $this->expectException(OutOfEnum::class);
         $validator->validate('foo');
     }
 
@@ -26,13 +27,12 @@ class EnumValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->validate('foo'));
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\OutOfEnum
-     */
     public function testNegative()
     {
         $validator = new EnumValidator(['foo', 'bar']);
-        $this->assertTrue($validator->validate('baz'));
+
+        $this->expectException(OutOfEnum::class);
+        $validator->validate('baz');
     }
 
 }

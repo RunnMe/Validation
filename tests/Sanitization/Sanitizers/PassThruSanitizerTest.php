@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\PassThruSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\PassThruSanitizer;
 
-class PassThruSanitizerTest extends \PHPUnit_Framework_TestCase
+class PassThruSanitizerTest extends TestCase
 {
 
     public function testPassThru()

@@ -2,17 +2,16 @@
 
 namespace Runn\tests\Validation\Validators\RegexpValidator;
 
+use PHPUnit\Framework\TestCase;
+use Runn\Validation\Exceptions\InvalidString;
 use Runn\Validation\Validators\RegexpValidator;
 
-class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
+class RegexpValidatorTest extends TestCase
 {
-    /**
-     * @expectedException \ArgumentCountError
-     */
     public function testParentValidator()
     {
+        $this->expectException(\ArgumentCountError::class);
         $validator = new RegexpValidator;
-        $validator([1,2,3]);
     }
 
     public function testPositive()
@@ -33,31 +32,28 @@ class RegexpValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeEmpty()
     {
         $validator = new RegexpValidator('~abc~');
-        $result = $validator('');
+
+        $this->expectException(InvalidString::class);
+        $validator('');
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeNotMatch()
     {
         $validator = new RegexpValidator('~abc~');
-        $result = $validator('foo');
+
+        $this->expectException(InvalidString::class);
+        $validator('foo');
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidString
-     */
     public function testNegativeNotMatchObject()
     {
         $validator = new RegexpValidator('~abc~');
-        $result = $validator(new class {public function __toString()
+
+        $this->expectException(InvalidString::class);
+        $validator(new class {public function __toString()
         {
             return 'foo';
         }

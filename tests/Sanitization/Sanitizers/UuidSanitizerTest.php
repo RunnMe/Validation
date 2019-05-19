@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\UuidSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\UuidSanitizer;
 
-class UuidSanitizerTest extends \PHPUnit_Framework_TestCase
+class UuidSanitizerTest extends TestCase
 {
 
     public function testValid()

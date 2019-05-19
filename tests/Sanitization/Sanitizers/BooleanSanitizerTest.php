@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\BooleanSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\BooleanSanitizer;
 
-class BooleanSanitizerTest extends \PHPUnit_Framework_TestCase
+class BooleanSanitizerTest extends TestCase
 {
 
     public function testFalse()

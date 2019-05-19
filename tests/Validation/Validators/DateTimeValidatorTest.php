@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\DateTimeValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidDateTime;
 use Runn\Validation\Validators\DateTimeValidator;
 
-class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
+class DateTimeValidatorTest extends TestCase
 {
 
     public function testPositive()
@@ -69,53 +70,48 @@ class DateTimeValidatorTest extends \PHPUnit_Framework_TestCase
         $this->fail();
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDateTime
-     */
     public function testFalse()
     {
         $value = false;
         $validator = new DateTimeValidator();
+
+        $this->expectException(InvalidDateTime::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDateTime
-     */
     public function testTrue()
     {
         $value = true;
         $validator = new DateTimeValidator();
+
+        $this->expectException(InvalidDateTime::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDateTime
-     */
     public function testArray()
     {
         $value = [1, 2, 3];
         $validator = new DateTimeValidator();
+
+        $this->expectException(InvalidDateTime::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDateTime
-     */
     public function testObject()
     {
         $value = new class {};
         $validator = new DateTimeValidator();
+
+        $this->expectException(InvalidDateTime::class);
         $validator($value);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidDateTime
-     */
     public function testResource()
     {
         $value = fopen('php://input', 'r');
         $validator = new DateTimeValidator();
+
+        $this->expectException(InvalidDateTime::class);
         $validator($value);
     }
 

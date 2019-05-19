@@ -2,10 +2,11 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\DateTimeSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Core\DateTime;
 use Runn\Sanitization\Sanitizers\DateTimeSanitizer;
 
-class DateTimeSanitizerTest extends \PHPUnit_Framework_TestCase
+class DateTimeSanitizerTest extends TestCase
 {
 
     public function testStrToTime()

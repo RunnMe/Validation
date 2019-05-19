@@ -2,35 +2,35 @@
 
 namespace Runn\tests\Validation\Validators\UuidValidator;
 
+use PHPUnit\Framework\TestCase;
+use Runn\Validation\Exceptions\EmptyValue;
+use Runn\Validation\Exceptions\InvalidUuid;
 use Runn\Validation\Validators\UuidValidator;
 
-class UuidValidatorTest extends \PHPUnit_Framework_TestCase
+class UuidValidatorTest extends TestCase
 {
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\EmptyValue
-     */
     public function testUuidEmpty()
     {
         $validator = new UuidValidator();
+
+        $this->expectException(EmptyValue::class);
         $validator('');
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidUuid
-     */
     public function testNotString()
     {
         $validator = new UuidValidator();
+
+        $this->expectException(InvalidUuid::class);
         $validator(42);
     }
 
-    /**
-     * @expectedException \Runn\Validation\Exceptions\InvalidUuid
-     */
     public function testInvalidUuid()
     {
         $validator = new UuidValidator();
+
+        $this->expectException(InvalidUuid::class);
         $validator('foo');
     }
 

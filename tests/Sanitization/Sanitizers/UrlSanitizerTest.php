@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\UrlSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\UrlSanitizer;
 
-class UrlSanitizerTest extends \PHPUnit_Framework_TestCase
+class UrlSanitizerTest extends TestCase
 {
 
     public function testValid()
@@ -12,7 +13,7 @@ class UrlSanitizerTest extends \PHPUnit_Framework_TestCase
         $sanitizer = new UrlSanitizer();
         $result = $sanitizer('http://test.com/foo/bar/?id=42');
 
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertEquals('http://test.com/foo/bar/?id=42', $result);
     }
 
@@ -21,7 +22,7 @@ class UrlSanitizerTest extends \PHPUnit_Framework_TestCase
         $sanitizer = new UrlSanitizer();
         $result = $sanitizer('  http://test.com/foo/bar/?id=42  ');
 
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertEquals('http://test.com/foo/bar/?id=42', $result);
     }
 

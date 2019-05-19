@@ -2,9 +2,10 @@
 
 namespace Runn\tests\Sanitization\Sanitizers\EmailSanitizer;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Sanitization\Sanitizers\EmailSanitizer;
 
-class EmailSanitizerTest extends \PHPUnit_Framework_TestCase
+class EmailSanitizerTest extends TestCase
 {
 
     public function testValid()
@@ -12,7 +13,7 @@ class EmailSanitizerTest extends \PHPUnit_Framework_TestCase
         $sanitizer = new EmailSanitizer();
         $result = $sanitizer('john@valid.org');
 
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertEquals('john@valid.org', $result);
     }
 
@@ -21,7 +22,7 @@ class EmailSanitizerTest extends \PHPUnit_Framework_TestCase
         $sanitizer = new EmailSanitizer();
         $result = $sanitizer('"john@valid.org"   ');
 
-        $this->assertInternalType('string', $result);
+        $this->assertIsString($result);
         $this->assertEquals('john@valid.org', $result);
     }
 

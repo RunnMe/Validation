@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\UrlValidator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidUrl;
 use Runn\Validation\Validators\UrlValidator;
 
-class UrlValidatorTest extends \PHPUnit_Framework_TestCase
+class UrlValidatorTest extends TestCase
 {
 
     public function testPositive()

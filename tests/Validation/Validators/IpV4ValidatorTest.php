@@ -2,12 +2,13 @@
 
 namespace Runn\tests\Validation\Validators\IpV4Validator;
 
+use PHPUnit\Framework\TestCase;
 use Runn\Validation\ValidationError;
 use Runn\Validation\Exceptions\EmptyValue;
 use Runn\Validation\Exceptions\InvalidIpV4;
 use Runn\Validation\Validators\IpV4Validator;
 
-class IpV4ValidatorTest extends \PHPUnit_Framework_TestCase
+class IpV4ValidatorTest extends TestCase
 {
 
     public function testPositive()
