@@ -27,6 +27,12 @@ class IntSanitizerTest extends TestCase
 
         $this->assertIsInt($result);
         $this->assertEquals(-42, $result);
+
+        $sanitizer = new IntSanitizer();
+        $result = $sanitizer(42.42);
+
+        $this->assertIsInt($result);
+        $this->assertEquals(42, $result);
     }
 
     public function testTrim()
