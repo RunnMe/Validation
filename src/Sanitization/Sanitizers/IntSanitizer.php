@@ -19,7 +19,7 @@ class IntSanitizer extends Sanitizer
      */
     public function sanitize($value): int
     {
-        return (int)filter_var($value, \FILTER_SANITIZE_NUMBER_INT);
+        return (int)filter_var($value, \FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     }
 
 }
